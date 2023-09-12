@@ -1,15 +1,15 @@
 exports.create = async (req, res) => {
-    res.status(200).json({ status: 'success', data: 'Created successfully' });
-  };
-  
-  exports.read = async (req, res) => {
-   res.status(200).json({ status: 'success', data: 'Read successfully' });
-  };
-  
-  exports.delete = async (req, res) => {
-    res.status(200).json({ status: 'success', data: 'Deleted successfully' });
-  };
-  
-  exports.update = async (req, res) => {
-    res.status(200).json({ status: 'success', data: 'Updated successfully' });
-  };
+  res.status(200).json({ status: 'success', data: 'Blog created' });
+};
+
+exports.read = async (req, res) => {
+res.status(200).json({ status: 'success', data: 'Blog read' });
+};
+
+exports.delete = async (req, res) => {
+ res.status(200).json({ status: 'success', data: 'Blog deleted' });
+};
+
+exports.update = async (req, res) => {
+ res.status(200).json({ status: 'success', data: 'Blog updated' });
+};

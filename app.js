@@ -16,12 +16,13 @@ app.use(cors());
 app.use(helmet());
 app.use(hpp());
 app.use(mongoSanitize());
+app.use(rateLimit());
 
 const Router = require('./src/Routes/api');
 app.use('/api', Router);
 
 app.use((req, res,) => {
-    res.status(404).send('404 Not Founded');
+    res.status(404).json('404 Not Founded');
   });
 
   
