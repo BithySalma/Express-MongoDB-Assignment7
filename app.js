@@ -1,4 +1,6 @@
 const express = require('express');
+const app = express();
+const Router = require('./src/Routes/api');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -6,7 +8,7 @@ const helmet = require('helmet');
 const hpp = require('hpp');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
-const app = express();
+
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,8 +21,11 @@ app.use(mongoSanitize());
 app.use(rateLimit());
 
 
-const Router = require('./src/Routes/api');
+app.get("/",(req,res)=>{
+  res.send("This is home")
+})
 app.use('/api', Router);
+
 
 app.use((req, res,) => {
     res.status(404).json('404 Not Founded');
