@@ -22,7 +22,7 @@ app.use(rateLimit());
 
 
 app.get("/",(req,res)=>{
-  res.send("This is home")
+  res.send("Hi I am Home!")
 })
 app.use('/api', Router);
 
